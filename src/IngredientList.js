@@ -3,12 +3,15 @@ import Ingredient from './Ingredient'
 
 export default class IngredientList extends Component {
   render(){
+    const allIngredients = this.props.ingredients.map(ingredient=>{
+      return <Ingredient ingredient={ingredient} />
+    })
     return(
-        <div>
-            <h1>ingredient list</h1>
-            <ul>
-                <li><Ingredient /></li>
-            </ul>
+        <div htmlClass="">
+            <h1>ingredient choices</h1>
+            <div onClick={this.props.addToBurger}>
+              {allIngredients}
+            </div>
         </div>
     )
   }

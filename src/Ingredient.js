@@ -4,7 +4,7 @@ export default class Ingredient extends Component {
   render(){
     return(
       <div>
-        <h1>this da ingredient</h1>
+        {this.props.ingredient}
       </div>
     )
   }
