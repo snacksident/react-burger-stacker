@@ -1,11 +1,10 @@
-import { Component } from 'react'
-
-export default class Ingredient extends Component {
-  render(){
+export default function Ingredient (props) {
     return(
-      <div>
-        {this.props.ingredient}
+      <div 
+        className="ingredient"
+        onClick={props.addToBurger}
+      >
+        {props.ingredient}
       </div>
     )
-  }
 }

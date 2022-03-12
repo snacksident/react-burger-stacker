@@ -1,18 +1,20 @@
-import { Component } from 'react'
 import Ingredient from './Ingredient'
 
-export default class IngredientList extends Component {
-  render(){
-    const allIngredients = this.props.ingredients.map(ingredient=>{
-      return <Ingredient ingredient={ingredient} />
+export default function IngredientList (props) {
+    const allIngredients = props.ingredients.map((ingredient,index)=>{
+      return <div 
+          key={`ingredient-list-${index}`}>
+          <Ingredient 
+            ingredient={ingredient} 
+            addToBurger={props.addToBurger} />
+        </div>
     })
     return(
-        <div htmlClass="">
+        <section className="ingredient-list">
             <h1>ingredient choices</h1>
-            <div onClick={this.props.addToBurger}>
+            <div>
               {allIngredients}
             </div>
-        </div>
+        </section>
     )
-  }
 }

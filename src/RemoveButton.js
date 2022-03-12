@@ -1,9 +1,9 @@
-import { Component } from 'react'
-
-export default class RemoveButton extends Component{
-    render(){
+export default function RemoveButton (props){
         return(
-            <button onClick={this.props.clearBurger}>ditch this burg.</button>
+            <button 
+                onClick={props.clearBurger}
+            >
+                ditch this burg.
+            </button>
         )
-    }
 }
