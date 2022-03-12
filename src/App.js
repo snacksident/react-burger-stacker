@@ -13,18 +13,12 @@ export default function App () {
   /**
    * adjust with setState
    */
-  const addToBurger = (e) =>{
-    //probably not the right way to do this?
-    const ingredientToAdd = e.target.innerText.toString()
-    console.log(`tried to add ${ingredientToAdd} to the burg`)
+  const addToBurger = (ingredientToAdd) =>{
+    
+    console.log(ingredientToAdd)
     let newArrayOfIngredients = burgerIngredients.slice()
     newArrayOfIngredients.push(ingredientToAdd)
-    //need to add clicked element into state.burgerIngredients array, set state correctly
-    // setBurgerIngredients
     setBurgerIngredients(newArrayOfIngredients)
-    this.setState({
-      burgerIngredients: newArrayOfIngredients
-    })
   }
  
 
